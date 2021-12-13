@@ -40,13 +40,13 @@ const updateTraitValues = async (
     (sum, { rarity }) => sum + rarity,
     0
   );
-  if (totalRarity !== 1) {
-    const message = `Total rarity did not add up to 1, got ${totalRarity.toFixed(
-      2
-    )} instead.`;
-    alert(message);
-    throw new Error(message);
-  }
+  // if (totalRarity !== 1) {
+  //   const message = `Total rarity did not add up to 1, got ${totalRarity.toFixed(
+  //     2
+  //   )} instead.`;
+  //   alert(message);
+  //   throw new Error(message);
+  // }
 
   const { projectId, collectionId, traitId } = identifier;
   const createTraitValues = parsedTraitValues.map(async ({ value, rarity }) => {
@@ -195,7 +195,7 @@ export default function ImportTraitValuesPage(props: Props) {
             <div className="mt-5 md:mt-0 md:col-span-2">
               <form action="#" method="POST" onSubmit={onSubmit}>
                 <div className="shadow sm:rounded-md sm:overflow-hidden">
-                  <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
+                  <div className="px-4 py-5 space-y-6 bg-white sm:p-6">
                     <div>
                       <label
                         htmlFor="name"
@@ -205,11 +205,11 @@ export default function ImportTraitValuesPage(props: Props) {
                       </label>
                       <label
                         htmlFor="files"
-                        className="cursor-pointer w-full mt-1 flex justify-center px-6 pt-20 pb-20 border-2 border-gray-300 border-dashed rounded-md"
+                        className="flex justify-center w-full px-6 pt-20 pb-20 mt-1 border-2 border-gray-300 border-dashed rounded-md cursor-pointer"
                       >
                         <div className="space-y-1 text-center">
                           <svg
-                            className="mx-auto h-18 w-12 text-gray-400"
+                            className="w-12 mx-auto text-gray-400 h-18"
                             stroke="currentColor"
                             fill="none"
                             viewBox="0 0 48 48"
@@ -222,7 +222,7 @@ export default function ImportTraitValuesPage(props: Props) {
                               strokeLinejoin="round"
                             />
                           </svg>
-                          <span className="relative bg-white rounded-md text-sm font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                          <span className="relative text-sm font-medium text-indigo-600 bg-white rounded-md hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                             Upload CSV file
                           </span>
                           <input
@@ -233,10 +233,10 @@ export default function ImportTraitValuesPage(props: Props) {
                             accept=".csv"
                             onChange={(e) => setSelectedFiles(e.target.files)}
                           />
-                          <p className="text-xs text-gray-500 pb-5">
+                          <p className="pb-5 text-xs text-gray-500">
                             Please select a file with comma-separated values.
                           </p>
-                          <p className="text-xs text-gray-500 pb-5">
+                          <p className="pb-5 text-xs text-gray-500">
                             {selectedFiles
                               ? "[" + selectedFiles?.length + " files selected]"
                               : ""}
@@ -246,10 +246,10 @@ export default function ImportTraitValuesPage(props: Props) {
                     </div>
                   </div>
 
-                  <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                  <div className="px-4 py-3 text-right bg-gray-50 sm:px-6">
                     <button
                       type="submit"
-                      className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                       Upload
                     </button>
