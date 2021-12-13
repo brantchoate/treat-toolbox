@@ -30,37 +30,22 @@ const Layout = ({
   return (
     <div>
       <Head>
-        <title>{title} | Treat Toolbox</title>
+        <title>{title} | Build-A-Hog</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
 
-        <meta
-          name="description"
-          content="Create and Launch Generative NFT Collections. Works with Metaplex Candy Machine on Solana."
-        />
+        <meta name="description" content="Build a Hog" />
         <meta name="theme-color" content="#ffffff" />
 
         <meta property="og:url" content="https://treattoolbox.com/" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="Treat Toolbox | The Skeleton Crew | Generative NFTs for Metaplex Candy Machine"
-        />
-        <meta
-          property="og:description"
-          content="Create and Launch Generative NFT Collections. Works with Metaplex Candy Machine on Solana."
-        />
+        <meta property="og:title" content="Build a Hog" />
+        <meta property="og:description" content="Build a Hog" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Treat Toolbox | The Skeleton Crew | Generative NFTs for Metaplex Candy Machine"
-        />
-        <meta
-          name="twitter:description"
-          content="A tool for creating Generative NFT Collections for Metaplex Candy Machine on Solana."
-        />
+        <meta name="twitter:title" content="Build a Hog" />
+        <meta name="twitter:description" content="Build a Hog" />
 
         <link
           rel="icon"
@@ -69,7 +54,7 @@ const Layout = ({
       </Head>
       <header>
         <nav className="bg-gray-800">
-          <div className="mx-auto px-3">
+          <div className="px-3 mx-auto">
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
@@ -77,7 +62,7 @@ const Layout = ({
                     <button>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
+                        className="w-6 h-6"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -94,7 +79,7 @@ const Layout = ({
                   </Link>
                 </div>
 
-                <div className="ml-5 w-1/2 flex">
+                <div className="flex w-1/2 ml-5">
                   <MainNavProjectDropdown
                     projects={projects}
                     selectedProjectId={selectedProjectId}
@@ -102,7 +87,7 @@ const Layout = ({
                 </div>
 
                 <div className="md:block">
-                  <div className="ml-6 flex items-baseline space-x-4">
+                  <div className="flex items-baseline ml-6 space-x-4">
                     {pages.map((page) => (
                       <MainNavItem
                         key={page.id}
@@ -114,12 +99,12 @@ const Layout = ({
 
                     {/* {true
                       ? (
-                        <button type="button" className="border border-gray-300 border-solid rounded-md uppercase text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-1 text-xs font-medium">
+                        <button type="button" className="px-3 py-1 text-xs font-medium text-gray-300 uppercase border border-gray-300 border-solid rounded-md hover:bg-gray-700 hover:text-white">
                           Connect
                         </button>
                       )
                       : (
-                        <button type="button" className="underline mt-1 text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-xs font-medium">
+                        <button type="button" className="px-3 py-2 mt-1 text-xs font-medium text-gray-300 underline rounded-md hover:bg-gray-700 hover:text-white">
                           Connected: <span className="font-mono tracking-tighter">AaG3f...ZdAvP</span>
                         </button>
                       )
@@ -134,11 +119,8 @@ const Layout = ({
       {children}
       <footer className="text-gray-600 body-font">
         <hr />
-        <div className="px-4 py-6 mx-auto flex items-center sm:flex-row flex-col">
-          <p className="text-sm text-gray-500 sm:py-2 sm:mt-0 mt-4">
-            © 2021 Skeleton Crew
-          </p>
-          <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <div className="flex flex-col items-center px-4 py-6 mx-auto sm:flex-row">
+          <span className="inline-flex justify-center mt-4 sm:ml-auto sm:mt-0 sm:justify-start">
             <a
               href="https://twitter.com/skeletoncrewrip"
               className="text-gray-500"
@@ -151,7 +133,7 @@ const Layout = ({
             </a>
             <a
               href="https://discord.gg/skeletoncrewrip"
-              className="text-gray-500 ml-4"
+              className="ml-4 text-gray-500"
               rel="noopener noreferrer"
               target="_blank"
             >
