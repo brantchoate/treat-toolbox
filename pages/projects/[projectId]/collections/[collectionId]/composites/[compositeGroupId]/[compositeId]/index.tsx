@@ -108,10 +108,10 @@ export default function IndexPage(props: Props) {
           />
 
           <main>
-            <div className="mt-4 mr-8 float-right">
+            <div className="float-right mt-4 mr-8">
               <button
                 type="button"
-                className="inline-flex items-center px-3 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-500 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                className="inline-flex items-center px-3 py-1 text-sm font-medium text-white bg-red-500 border border-transparent rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                 onClick={(e) => confirmDeleteComposite(e)}
               >
                 Delete Composite
@@ -119,7 +119,7 @@ export default function IndexPage(props: Props) {
               {/*
               <button
                 type="button"
-                className="inline-flex items-center px-3 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="inline-flex items-center px-3 py-1 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 onClick={(e) => mintToWallet()}
               >
                 Mint to Wallet
@@ -127,9 +127,10 @@ export default function IndexPage(props: Props) {
             </div>
             <div className="flex flex-col clear-both px-8 py-4">
               <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                  <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                  <div className="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
                     <div className="float-left p-4">
+                      console.log(composite)
                       {composite.externalURL ? (
                         <Image
                           src={composite.externalURL}
@@ -143,7 +144,7 @@ export default function IndexPage(props: Props) {
                         ""
                       )}
                     </div>
-                    <div className="float-left align-top p-4 w-1/2">
+                    <div className="float-left w-1/2 p-4 align-top">
                       <ul>
                         {composite.traits
                           .filter((pair) => {
@@ -152,7 +153,7 @@ export default function IndexPage(props: Props) {
                           .map((traitValuePair, i) => (
                             <li
                               key={i}
-                              className="border-2 rounded-lg text-center p-4 float-left m-4"
+                              className="float-left p-4 m-4 text-center border-2 rounded-lg"
                             >
                               <strong>
                                 {traitValuePair.trait.name.toUpperCase()}
@@ -167,7 +168,7 @@ export default function IndexPage(props: Props) {
                             ).map((entryKey, i) => (
                               <li
                                 key={i}
-                                className="border-2 rounded-lg text-center p-4 float-left m-4"
+                                className="float-left p-4 m-4 text-center border-2 rounded-lg"
                               >
                                 <strong>{entryKey.toUpperCase()}</strong>
                                 <br />
@@ -180,7 +181,6 @@ export default function IndexPage(props: Props) {
                       </ul>
 
                       <br className="clear-both" />
-
                     </div>
                   </div>
                 </div>
