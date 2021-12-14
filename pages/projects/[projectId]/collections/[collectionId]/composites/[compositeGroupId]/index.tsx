@@ -150,7 +150,7 @@ export default function IndexPage(props: Props) {
             section="composites"
           />
           <main>
-            <div className="mt-4 mr-8 float-right">
+            <div className="float-right mt-4 mr-8">
               <Link
                 href={
                   "/projects/" +
@@ -166,7 +166,7 @@ export default function IndexPage(props: Props) {
                 <a>
                   <button
                     type="button"
-                    className="inline-flex items-center mr-2 px-3 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="inline-flex items-center px-3 py-1 mr-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   >
                     Rarity Chart
                   </button>
@@ -187,7 +187,7 @@ export default function IndexPage(props: Props) {
                 <a>
                   <button
                     type="button"
-                    className="inline-flex items-center mr-2 px-3 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="inline-flex items-center px-3 py-1 mr-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   >
                     Composite Playground
                   </button>
@@ -195,7 +195,7 @@ export default function IndexPage(props: Props) {
               </Link>
               <button
                 type="button"
-                className="inline-flex items-center px-3 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="inline-flex items-center px-3 py-1 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 onClick={(e) => packageForMint()}
               >
                 Export for Candy Machine 🍬
@@ -204,12 +204,13 @@ export default function IndexPage(props: Props) {
 
             <ul
               role="list"
-              className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8 clear-both px-8 py-4"
+              className="grid clear-both grid-cols-2 px-8 py-4 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
             >
               {composites.map((imageComposite) => {
+                console.log(imageComposite);
                 return (
                   <li key={imageComposite.id} className="relative">
-                    <div className="block group w-full aspect-w-10 aspect-h-10 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500 overflow-hidden">
+                    <div className="block w-full overflow-hidden bg-gray-100 rounded-lg group aspect-w-10 aspect-h-10 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500">
                       <Link
                         href={
                           "/projects/" +
