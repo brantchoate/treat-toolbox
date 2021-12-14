@@ -288,7 +288,7 @@ export class ArtworkGenerator {
 
     let hasUnusedTraitValuePair = false;
 
-    const numRetries = 20;
+    const numRetries = 200;
     let retriesRemaining = numRetries;
     let failedToFindUnusedTraitPair = false;
 
